@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Embeddable Widget</title>
+</head>
+
+<body>
+  <p>Widget rendered in the bottom right section on the screen.</p>
+  <div id="embed" style="width: 40%; margin: 0 auto;"></div>
+  <script src="https://cdn.jsdelivr.net/gh/ambar0099/wid-do/dist/widget.js"></script>
+  <script>
+    // function temp() {
+    EmbeddableWidget.mount({
+      type: 'popup'
+    });
+  // }
+
+      window.fbAsyncInit = function () {
+        window.FB = FB;
+        console.log(11234, window.FB);
+        window.FB.init({
+          appId: '4082201481863569',
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    // }
+  </script>
+</body>
+
+</html>
